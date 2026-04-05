@@ -1,0 +1,195 @@
+/* Estilos generales del sitio */
+body {
+    margin: 0;
+    /* elimina márgenes por defecto del navegador */
+
+    padding: 0;
+    /* elimina espacios internos */
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* tipo de letra */
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    /* fondo con degradado */
+
+    min-height: 100vh;
+    /* altura completa de la pantalla */
+}
+
+/* Caja del formulario */
+.contenedor {
+    background: white;
+    /* fondo blanco */
+
+    width: 90%;
+    /* ocupa el 90% del ancho */
+
+    max-width: 420px;
+    /* ancho máximo */
+
+    margin: 40px auto;
+    /* centrado horizontal */
+
+    padding: 40px;
+    /* espacio interno */
+
+    border-radius: 12px;
+    /* bordes redondeados */
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* sombra */
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    /* centra el texto */
+
+    margin-bottom: 20px;
+    /* espacio abajo */
+
+    color: #333;
+    /* color del texto */
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    /* cada label en una línea nueva */
+
+    margin-top: 10px;
+    margin-bottom: 8px;
+    /* separación entre label e input */
+
+    font-size: 14px;
+    color: #555;
+    /* color del texto */
+}
+
+/* Campos del formulario */
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    /* ocupa todo el ancho */
+
+    padding: 10px;
+    /* espacio interno */
+
+    margin-bottom: 10px;
+    /* espacio abajo */
+
+    border: 1px solid #ccc;
+    /* borde gris */
+
+    border-radius: 6px;
+    /* bordes redondeados */
+
+    box-sizing: border-box;
+    /* mantiene el tamaño correcto */
+
+    transition: 0.3s;
+    /* animación suave */
+}
+
+/* Cuando haces clic en un input */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #667eea;
+    /* cambia color del borde */
+
+    outline: none;
+    /* quita borde azul */
+
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+    /* sombra de enfoque */
+}
+
+/* Botón enviar */
+input[type="submit"] {
+    width: 100%;
+    /* ocupa todo el ancho */
+
+    padding: 12px;
+    /* espacio interno */
+
+    background-color: #667eea;
+    /* color de fondo */
+
+    color: white;
+    /* color del texto */
+
+    border: none;
+    /* sin borde */
+
+    border-radius: 6px;
+    /* bordes redondeados */
+
+    font-size: 16px;
+
+    cursor: pointer;
+    /* cambia el cursor */
+
+    transition: background-color 0.3s;
+    /* animación */
+}
+
+/* Hover del botón */
+input[type="submit"]:hover {
+    background-color: #5a67d8;
+    /* cambia color al pasar el mouse */
+}
+
+/* Contenedor de tabla */
+.tabla-contenedor {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    /* ocupa todo el ancho */
+
+    border-collapse: collapse;
+    /* une bordes */
+}
+
+/* Bordes de tabla */
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+/* Celdas */
+th,
+td {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 40px;
+    text-align: left;
+}
+
+/* Encabezado de tabla */
+th {
+    background-color: #667eea;
+    color: white;
+}
+
+/* Filas pares */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover en filas */
+tr:hover {
+    background-color: #e0e0e0;
+}

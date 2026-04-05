@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- indica que es un documento HTML5 -->
+
+<html lang="es">
+<!-- indica el idioma del documento -->
+
+<head>
+    <!-- parte de la página que no se ve, pero contiene información importante -->
+    <meta charset="UTF-8">
+    <!-- permite usar tildes y caracteres especiales -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- hace que el sitio sea responsive -->
+
+    <title>Sistema de Gastos</title>
+    <!-- título que aparece en la pestaña -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- conecta el archivo css -->
+</head>
+
+<body>
+    <!-- aquí va todo lo visible -->
+
+    <div class="contenedor">
+        <!-- caja donde está el formulario -->
+
+        <form action="proces.php" method="post">
+            <!-- action: envía los datos al archivo php -->
+            <!-- method="post": envía los datos de forma oculta -->
+
+            <h2>Registro de Gastos</h2>
+            <!-- título -->
+
+            <label for="nombre">Nombre del gasto</label>
+            <!-- describe el input -->
+            <input type="text" id="nombre" name="nombre" placeholder="Dividendo" required>
+            <!-- campo nombre -->
+
+            <label for="categoria">Categoría</label>
+            <input type="text" id="categoria" name="categoria" placeholder="Banco Estado" required>
+            <!-- campo categoría -->
+
+            <label for="monto">Monto</label>
+            <input type="number" id="monto" name="monto" placeholder="387000" required>
+            <!-- campo monto -->
+
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <!-- campo fecha -->
+
+            <input type="submit" value="Guardar gasto">
+            <!-- botón para enviar -->
+        </form>
+    </div>
+
+    <div class="tabla-contenedor">
+        <!-- tabla de ejemplo -->
+
+        <h2>Ejemplo de gastos</h2>
+
+        <table>
+            <tr>
+                <th>Detalle</th>
+                <th>Entidad</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+            </tr>
+
+            <tr>
+                <td>Dividendo</td>
+                <td>Banco Estado</td>
+                <td>$387.000</td>
+                <td>2024-06-01</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
