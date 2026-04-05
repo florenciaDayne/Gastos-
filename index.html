@@ -13,54 +13,58 @@
     <!-- hace que el sitio sea responsive -->
 
     <title>Sistema de Gastos</title>
-    <!-- título que aparece en la pestaña -->
+    <!-- título que aparece en la pestaña del navegador -->
 
     <link rel="stylesheet" href="style.css">
-    <!-- conecta el archivo css -->
+    <!-- conecta el archivo CSS externo -->
 </head>
 
 <body>
-    <!-- aquí va todo lo visible -->
+    <!-- aquí va todo lo visible de la página -->
 
     <div class="contenedor">
-        <!-- caja donde está el formulario -->
+        <!-- contenedor principal del formulario -->
 
         <form action="proces.php" method="post">
-            <!-- action: envía los datos al archivo php -->
-            <!-- method="post": envía los datos de forma oculta -->
+            <!-- action: envía los datos al archivo proces.php -->
+            <!-- method='post': envía los datos de forma oculta -->
 
             <h2>Registro de Gastos</h2>
-            <!-- título -->
+            <!-- título principal del formulario -->
 
             <label for="nombre">Nombre del gasto</label>
-            <!-- describe el input -->
+            <!-- texto descriptivo del campo -->
             <input type="text" id="nombre" name="nombre" placeholder="Dividendo" required>
-            <!-- campo nombre -->
+            <!-- campo para escribir el nombre del gasto -->
 
             <label for="categoria">Categoría</label>
             <input type="text" id="categoria" name="categoria" placeholder="Banco Estado" required>
-            <!-- campo categoría -->
+            <!-- campo para escribir la categoría o entidad -->
 
             <label for="monto">Monto</label>
             <input type="number" id="monto" name="monto" placeholder="387000" required>
-            <!-- campo monto -->
+            <!-- campo numérico para ingresar el monto -->
 
             <label for="fecha">Fecha</label>
             <input type="date" id="fecha" name="fecha" required>
-            <!-- campo fecha -->
+            <!-- campo para seleccionar la fecha -->
 
             <input type="submit" value="Guardar gasto">
-            <!-- botón para enviar -->
+            <!-- botón para enviar el formulario -->
         </form>
     </div>
 
     <div class="tabla-contenedor">
-        <!-- tabla de ejemplo -->
+        <!-- contenedor de la tabla de ejemplo -->
 
         <h2>Ejemplo de gastos</h2>
+        <!-- subtítulo de la tabla -->
 
         <table>
+            <!-- tabla para mostrar gastos de ejemplo -->
+
             <tr>
+                <!-- fila de encabezado -->
                 <th>Detalle</th>
                 <th>Entidad</th>
                 <th>Monto</th>
@@ -68,6 +72,7 @@
             </tr>
 
             <tr>
+                <!-- fila con datos de ejemplo -->
                 <td>Dividendo</td>
                 <td>Banco Estado</td>
                 <td>$387.000</td>

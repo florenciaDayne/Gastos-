@@ -1,70 +1,86 @@
 <?php
-/*conexion a la base de datos*/
-$conexion = mysqli_connect("localhost","Florencia","1808","Gastos");
-/* localhost=> servidor
-   Florencia=> usuario
-   1808=> contraseña
-   Gastos=> base de datos
-*/
+/* =====================================================
+   CONEXIÓN A LA BASE DE DATOS
+   ===================================================== */
+
+/* se crea la conexión con MySQL usando XAMPP */
+$conexion = new mysqli("localhost", "root", "", "gastos");
+
+/* verifica si hay error en la conexión */
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
-    /* detiene el programa si falla la conexión y muestra el mensaje de error */
 }
 
-/*Recibir los datos del formulario*/
+
+/* =====================================================
+   CAPTURAR DATOS DEL FORMULARIO
+   ===================================================== */
+
+/* $_POST permite recibir los datos enviados desde el formulario */
 $nombre = $_POST['nombre'] ?? '';
-/* Recibe el nombre del gasto */
-
 $categoria = $_POST['categoria'] ?? '';
-/* Recibe la categoría del gasto */
-
 $monto = $_POST['monto'] ?? '';
-/* Recibe el monto del gasto */
-
 $fecha = $_POST['fecha'] ?? '';
-/* Recibe la fecha del gasto */
 
-
-/* Validar los datos recibidos */
+/* se valida que los campos no estén vacíos */
 if (empty($nombre) || empty($categoria) || empty($monto) || empty($fecha)) {
-    die("Todos los campos son obligatorios.");
-    /* Detiene el programa si algún campo está vacío y muestra un mensaje de error */
+    die("Todos los campos son obligatorios");
 }
 
-/*preparar la consulta SQL para insertar los datos en la tabla "gastos"*/
-$stmt =$conexion->prepare("INSERT INTO gastos (nombre, categoria, monto, fecha) VALUES (?, ?, ?, ?)");
-/* evita inteccion */
-if(!$stmt) {
-    die("Error en la consulta:. " . $conexion->error);
-    /* Detiene el programa si falla la preparación de la consulta y muestra un mensaje de error */
+
+/* =====================================================
+   PREPARAR CONSULTA SQL
+   ===================================================== */
+
+/* se crea una consulta preparada para evitar inyección SQL */
+$sql = "INSERT INTO gastos (Entidad, categoria, monto, fecha) VALUES (?, ?, ?, ?)";
+
+/* se prepara la consulta */
+$stmt = $conexion->prepare($sql);
+
+/* se verifica si hubo error */
+if (!$stmt) {
+    die("Error en la consulta: " . $conexion->error);
 }
 
-/*Vincular datos */
-$stmt->bind_param("ssds", $nombre, $categoria, $monto, $fecha);
-/* s = string /* d = double (número con decimales) */
-/* s = string */
-/* = integer (numero)
-/* = string */
 
-/* Ejecutar la consulta */
+/* =====================================================
+   VINCULAR DATOS
+   ===================================================== */
+
+/* se asignan los valores a la consulta */
+/* s = string, s = string, i = entero, s = string */
+$stmt->bind_param("ssis", $nombre, $categoria, $monto, $fecha);
+
+
+/* =====================================================
+   EJECUTAR CONSULTA
+   ===================================================== */
+
+/* se ejecuta la consulta */
 if ($stmt->execute()) {
-    /*Mostrar resultados */
 
-    echo <h2>"Gasto registrado correctamente.</h2>";
-    echo "<p>strong>Gastos:</strong> ". htmlspecialchars($nombre). "</p>";
-    /* htmlspecialchars evita problemas de seguridad al mostrar el nombre del gasto */
-    echo "<p><strong>Categoría:</strong> ". htmlspecialchars($categoria). "</p>";
-    /* htmlspecialchars evita problemas de seguridad al mostrar la categoría del gasto */
-    echo "<p><strong>Monto:</strong> $". htmlspecialchars($monto). "</p>";
-    /* htmlspecialchars evita problemas de seguridad al mostrar el monto del gasto */
-    echo "<p><strong>Fecha:</strong> ". htmlspecialchars($fecha). "</p>";
-    /* htmlspecialchars evita problemas de seguridad al mostrar la fecha del gasto */
+    /* mensaje de éxito */
+    echo "<h2>Gasto registrado correctamente</h2>";
+
+    /* se muestran los datos ingresados */
+    echo "<p><strong>Nombre:</strong> " . htmlspecialchars($nombre) . "</p>";
+    echo "<p><strong>Categoría:</strong> " . htmlspecialchars($categoria) . "</p>";
+    echo "<p><strong>Monto:</strong> $" . htmlspecialchars($monto) . "</p>";
+    echo "<p><strong>Fecha:</strong> " . htmlspecialchars($fecha) . "</p>";
+
 } else {
-    echo "Error al registrar el gasto: " . $stmt->error;
 
-    /* Muestra un mensaje de éxito si la consulta se ejecuta correctamente */
+    /* mensaje de error */
+    echo "Error al registrar el gasto: " . $stmt->error;
 }
-/* Cerrar la conexión */
+
+
+/* =====================================================
+   CERRAR CONEXIÓN
+   ===================================================== */
+
+/* se cierran los recursos */
 $stmt->close();
 $conexion->close();
 ?>

@@ -1,45 +1,49 @@
-// ==========================================
-// FUNCIÓN PRINCIPAL DE VALIDACIÓN
-// ==========================================
+// =====================================================
+// FUNCIÓN PRINCIPAL DE VALIDACIÓN DEL FORMULARIO
+// =====================================================
 
 function validarFormulario() {
-    // Esta función se ejecuta cuando se envía el formulario
+    // Esta función se ejecuta cuando el usuario presiona "Guardar"
 
-    // ==========================================
+    // =====================================================
     // 1. OBTENER VALORES DEL FORMULARIO
-    // ==========================================
+    // =====================================================
 
     let nombre = document.getElementById("nombre").value.trim();
-    // document = página web
+    // document = representa la página web
     // getElementById = busca un elemento por su ID
-    // value = obtiene lo que el usuario escribió
-    // trim() = elimina espacios en blanco
+    // value = obtiene el contenido ingresado por el usuario
+    // trim() = elimina espacios en blanco al inicio y final
 
     let categoria = document.getElementById("categoria").value.trim();
+    // obtiene el valor del campo categoría
 
     let monto = document.getElementById("monto").value.trim();
+    // obtiene el valor del campo monto
 
     let fecha = document.getElementById("fecha").value.trim();
+    // obtiene el valor del campo fecha
 
 
-    // ==========================================
+    // =====================================================
     // 2. VALIDAR CAMPOS VACÍOS
-    // ==========================================
+    // =====================================================
 
     if (nombre === "" || categoria === "" || monto === "" || fecha === "") {
         alert("Todos los campos son obligatorios");
-        // alert muestra un mensaje en pantalla
+        // alert = muestra un mensaje emergente al usuario
+
         return false;
         // return false evita que el formulario se envíe
     }
 
 
-    // ==========================================
-    // 3. VALIDAR LARGO DEL TEXTO
-    // ==========================================
+    // =====================================================
+    // 3. VALIDAR LONGITUD DEL TEXTO
+    // =====================================================
 
     if (nombre.length < 3) {
-        // length cuenta caracteres
+        // length = cuenta la cantidad de caracteres
         alert("El nombre debe tener al menos 3 caracteres");
         return false;
     }
@@ -50,22 +54,23 @@ function validarFormulario() {
     }
 
 
-    // ==========================================
-    // 4. VALIDAR NÚMEROS
-    // ==========================================
+    // =====================================================
+    // 4. VALIDAR QUE EL MONTO SEA NUMÉRICO
+    // =====================================================
 
     if (isNaN(monto) || Number(monto) <= 0) {
-        // isNaN = verifica si NO es número
-        // Number() convierte a número
+        // isNaN = verifica si NO es un número
+        // Number() = convierte el valor a número
+
         alert("El monto debe ser un número mayor a 0");
         return false;
     }
 
 
-    // ==========================================
+    // =====================================================
     // 5. VALIDACIÓN FINAL
-    // ==========================================
+    // =====================================================
 
     return true;
-    // Si todo está correcto, el formulario se envía
+    // Si todas las validaciones son correctas, se envía el formulario
 }

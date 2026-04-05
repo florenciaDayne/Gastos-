@@ -1,118 +1,147 @@
-/* Estilos generales del sitio */
+/* =====================================================
+   ESTILOS GENERALES DEL SITIO
+   ===================================================== */
+
 body {
     margin: 0;
-    /* elimina márgenes por defecto del navegador */
+    /* elimina los márgenes por defecto del navegador */
 
     padding: 0;
-    /* elimina espacios internos */
+    /* elimina los espacios internos */
 
     font-family: 'Segoe UI', Arial, sans-serif;
-    /* tipo de letra */
+    /* define el tipo de letra */
 
     background: linear-gradient(135deg, #667eea, #764ba2);
-    /* fondo con degradado */
+    /* aplica un fondo con degradado */
 
     min-height: 100vh;
-    /* altura completa de la pantalla */
+    /* hace que el body ocupe toda la altura de la pantalla */
 }
 
-/* Caja del formulario */
+
+/* =====================================================
+   CONTENEDOR DEL FORMULARIO
+   ===================================================== */
+
 .contenedor {
     background: white;
     /* fondo blanco */
 
     width: 90%;
-    /* ocupa el 90% del ancho */
+    /* ocupa el 90% del ancho disponible */
 
     max-width: 420px;
-    /* ancho máximo */
+    /* limita el ancho máximo */
 
     margin: 40px auto;
-    /* centrado horizontal */
+    /* centra el contenedor horizontalmente */
 
     padding: 40px;
-    /* espacio interno */
+    /* agrega espacio interno */
 
     border-radius: 12px;
-    /* bordes redondeados */
+    /* redondea las esquinas */
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    /* sombra */
+    /* agrega una sombra */
 }
 
-/* Títulos */
+
+/* =====================================================
+   TÍTULOS
+   ===================================================== */
+
 h2 {
     text-align: center;
     /* centra el texto */
 
     margin-bottom: 20px;
-    /* espacio abajo */
+    /* agrega espacio debajo del título */
 
     color: #333;
-    /* color del texto */
+    /* define el color del texto */
 }
 
-/* Etiquetas */
+
+/* =====================================================
+   ETIQUETAS DEL FORMULARIO
+   ===================================================== */
+
 label {
     display: block;
-    /* cada label en una línea nueva */
+    /* hace que cada label aparezca en una línea nueva */
 
     margin-top: 10px;
     margin-bottom: 8px;
-    /* separación entre label e input */
+    /* agrega separación entre label e input */
 
     font-size: 14px;
+    /* tamaño de letra */
+
     color: #555;
     /* color del texto */
 }
 
-/* Campos del formulario */
+
+/* =====================================================
+   CAMPOS DEL FORMULARIO
+   ===================================================== */
+
 input[type="text"],
 input[type="number"],
 input[type="date"] {
     width: 100%;
-    /* ocupa todo el ancho */
+    /* ocupa todo el ancho del contenedor */
 
     padding: 10px;
-    /* espacio interno */
+    /* agrega espacio interno */
 
     margin-bottom: 10px;
-    /* espacio abajo */
+    /* agrega espacio debajo de cada campo */
 
     border: 1px solid #ccc;
-    /* borde gris */
+    /* agrega un borde gris */
 
     border-radius: 6px;
-    /* bordes redondeados */
+    /* redondea las esquinas */
 
     box-sizing: border-box;
-    /* mantiene el tamaño correcto */
+    /* mantiene el ancho correcto incluyendo padding y borde */
 
     transition: 0.3s;
-    /* animación suave */
+    /* aplica una animación suave */
 }
 
-/* Cuando haces clic en un input */
+
+/* =====================================================
+   EFECTO FOCUS EN LOS INPUTS
+   ===================================================== */
+
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus {
     border-color: #667eea;
-    /* cambia color del borde */
+    /* cambia el color del borde al seleccionar */
 
     outline: none;
-    /* quita borde azul */
+    /* elimina el borde azul por defecto */
 
     box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
-    /* sombra de enfoque */
+    /* agrega una sombra de enfoque */
 }
 
-/* Botón enviar */
+
+/* =====================================================
+   BOTÓN ENVIAR
+   ===================================================== */
+
 input[type="submit"] {
     width: 100%;
     /* ocupa todo el ancho */
 
     padding: 12px;
-    /* espacio interno */
+    /* agrega espacio interno */
 
     background-color: #667eea;
     /* color de fondo */
@@ -121,75 +150,130 @@ input[type="submit"] {
     /* color del texto */
 
     border: none;
-    /* sin borde */
+    /* elimina el borde */
 
     border-radius: 6px;
-    /* bordes redondeados */
+    /* redondea las esquinas */
 
     font-size: 16px;
+    /* tamaño de letra */
 
     cursor: pointer;
-    /* cambia el cursor */
+    /* cambia el cursor a mano */
 
     transition: background-color 0.3s;
-    /* animación */
+    /* anima el cambio de color */
 }
 
-/* Hover del botón */
+
+/* =====================================================
+   EFECTO HOVER DEL BOTÓN
+   ===================================================== */
+
 input[type="submit"]:hover {
     background-color: #5a67d8;
-    /* cambia color al pasar el mouse */
+    /* cambia el color cuando el mouse pasa por encima */
 }
 
-/* Contenedor de tabla */
+
+/* =====================================================
+   CONTENEDOR DE LA TABLA
+   ===================================================== */
+
 .tabla-contenedor {
     background: white;
+    /* fondo blanco */
+
     width: 90%;
+    /* ocupa el 90% del ancho */
+
     max-width: 800px;
+    /* ancho máximo */
+
     margin: 30px auto;
+    /* centra el contenedor */
+
     padding: 30px;
+    /* espacio interno */
+
     border-radius: 12px;
+    /* esquinas redondeadas */
+
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    /* agrega sombra */
 }
 
-/* Tabla */
+
+/* =====================================================
+   TABLA
+   ===================================================== */
+
 table {
     width: 100%;
-    /* ocupa todo el ancho */
+    /* ocupa todo el ancho disponible */
 
     border-collapse: collapse;
-    /* une bordes */
+    /* une los bordes de la tabla */
 }
 
-/* Bordes de tabla */
+
+/* =====================================================
+   BORDES DE TABLA
+   ===================================================== */
+
 table,
 th,
 td {
     border: 1px solid black;
+    /* aplica borde a la tabla, encabezados y celdas */
 }
 
-/* Celdas */
+
+/* =====================================================
+   CELDAS DE LA TABLA
+   ===================================================== */
+
 th,
 td {
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 30px;
     padding-right: 40px;
+    /* agrega padding en cada lado */
+
     text-align: left;
+    /* alinea el texto a la izquierda */
 }
 
-/* Encabezado de tabla */
+
+/* =====================================================
+   ENCABEZADO DE TABLA
+   ===================================================== */
+
 th {
     background-color: #667eea;
+    /* color de fondo del encabezado */
+
     color: white;
+    /* color del texto */
 }
 
-/* Filas pares */
+
+/* =====================================================
+   FILAS PARES
+   ===================================================== */
+
 tr:nth-child(even) {
     background-color: #f2f2f2;
+    /* pinta las filas pares */
 }
 
-/* Hover en filas */
+
+/* =====================================================
+   EFECTO HOVER EN FILAS
+   ===================================================== */
+
 tr:hover {
     background-color: #e0e0e0;
+    /* cambia el color al pasar el mouse */
 }
